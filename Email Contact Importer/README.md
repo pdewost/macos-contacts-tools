@@ -1,6 +1,6 @@
 # Email Contact Importer
 
-Standalone macOS AppleScript + ASOC utility that matches a list of email addresses — pasted from a mail client or Calendar invite — against the macOS Contacts database. For each address it can prepend a timestamped note, add a new email address to an existing contact found by name, create missing contacts, and stage everyone in a named group for downstream LinkedIn enrichment ([LSAMC](../LSAMC%20-%20LinkedIn%20Sync%20Agent%20for%20macOS%20Contacts/)).
+Standalone macOS AppleScript + ASOC utility that matches a list of email addresses — pasted from a mail client or Calendar invite — against the macOS Contacts database. For each address it can prepend a timestamped note, add a new email address to an existing contact found by name, create missing contacts, and stage everyone in a named group for further processing.
 
 No Python. No shell wrapper. No external dependencies.
 
@@ -44,19 +44,19 @@ Paste your list. The clipboard is pre-loaded. All of the following formats are s
 
 ### Dialog 2 — One-liner note (optional)
 
-Enter a short note to prepend to all contacts (e.g. `UEFA meeting NYON 19 march 2026`).
+Enter a short note to prepend to all contacts (e.g. `Meeting at Acme HQ 15 April 2026`).
 Leave blank for **match-only mode** — contacts are looked up but no contact notes are modified.
 
 ### Dialog 2b — Group staging (optional)
 
-Choose whether to stage all contacts in a named group for LSAMC enrichment.
+Choose whether to stage all contacts in a named group for further processing.
 The name is auto-derived from your note and is fully editable. Click **Skip Group** to skip.
 
 Group naming algorithm:
 first 4 non-stopword tokens from the note → Title-Cased → hyphen-joined → prefixed with `script-`
 
 ```
-"UEFA meeting NYON 19 march 2026"     →  script-UEFA-Meeting-NYON-19
+"Meeting at Acme HQ 15 April 2026"    →  script-Meeting-Acme-HQ-15
 "Attended Steering Committee Q1 2026" →  script-Attended-Steering-Committee-Q1
 (no note)                             →  script-email-import
 ```

@@ -54,7 +54,7 @@ When fewer than 15 contacts are selected, the surgical context menus ("Add/Move"
 - [x] **v0.3.16 (Performance Boost)**: Full ASOC optimization for all Smart Filters (Note Lines, Phones, LinkedIn, Unmodified). Optimized No-Photo detection.
 - [x] **v0.3.17 (Reliability Fix)**: Reverted Note-based filters to Scripting Bridge bulk-fetch due to macOS `CNContactStore` note field restrictions. Added context to empty-result dialogs.
 - [x] **v0.3.20**: Enhanced surgical removal with contact counts and automated empty group deletion prompts.
-- [x] **v0.3.21 (LinkedIn Overhaul)**: Unified LinkedIn degree classification using LSAM note blocks (Rules A-B-C). Replaced individual degree filters with a single tri-state sync.
+- [x] **v0.3.21 (LinkedIn Overhaul)**: Unified LinkedIn degree classification using note block markers (Rules A-B-C). Replaced individual degree filters with a single tri-state sync.
 - [x] **LinkedIn Social Profile Migration**: High-performance detection of LinkedIn handles stored in URL fields, with automated migration to Social Profiles and subsequent URL cleanup.
 - [ ] **Cross-Contact Deduplication**: High-performance detection of potential duplicates across different accounts/containers using the "Shared Identifier" engine.
 - [ ] **Atomic Fusion & Association**: Safety-first merging (Fusion) and linking (Association) of cross-contact matches with automated VCF and Note backups.
