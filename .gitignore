@@ -1,0 +1,58 @@
+# ── macOS ────────────────────────────────────────────────────────────
+.DS_Store
+**/.DS_Store
+._*
+
+# ── Claude Code internal ─────────────────────────────────────────────
+.claude/
+
+# ── Secrets & personal data — NEVER commit ───────────────────────────
+.env
+*.env
+**/.env
+
+# ── LSAMC: personal vault + logs + credentials ───────────────────────
+LSAMC - LinkedIn Sync Agent for macOS Contacts/data/
+LSAMC - LinkedIn Sync Agent for macOS Contacts/logs/
+LSAMC - LinkedIn Sync Agent for macOS Contacts/archive/
+LSAMC - LinkedIn Sync Agent for macOS Contacts/VAULT_*.json
+LSAMC - LinkedIn Sync Agent for macOS Contacts/__pycache__/
+LSAMC - LinkedIn Sync Agent for macOS Contacts/*.pyc
+LSAMC - LinkedIn Sync Agent for macOS Contacts/LSAM-Output-Report-*.md
+LSAMC - LinkedIn Sync Agent for macOS Contacts/AUDIT_*.md
+LSAMC - LinkedIn Sync Agent for macOS Contacts/RESCUE_PLAN*.md
+LSAMC - LinkedIn Sync Agent for macOS Contacts/SYNC_*.md
+LSAMC - LinkedIn Sync Agent for macOS Contacts/IDENTITY_AUDIT_*.md
+LSAMC - LinkedIn Sync Agent for macOS Contacts/PLAN_*.md
+LSAMC - LinkedIn Sync Agent for macOS Contacts/TIER3_*.md
+LSAMC - LinkedIn Sync Agent for macOS Contacts/ANTIGRAVITY_REBASE_*.md
+
+# ── Repatriated GitHub clones (nested git repos) ─────────────────────
+MLPro Campaign + Bounced emails Manager/OSX-Contacts-Process-MailChimp-Bouncing-Email-List/
+MLPro Campaign + Bounced emails Manager/OSX-Contacts-Messages-Send-Texts-To-Request-email-updates/
+MLPro Campaign + Bounced emails Manager/email-process-bounced-emails-Contacts-OSX/
+Other AppleScripts to review, cleanup, merge/ics-file-cleaner/
+
+# ── Build / temp ──────────────────────────────────────────────────────
+*.log
+*.lock
+__pycache__/
+*.pyc
+*.pyo
+
+# ── WebArchive output (large generated files) ─────────────────────────
+WebArchive Converter & Watch Manager/_converted/
+WebArchive Converter & Watch Manager/inspect_extract/
+WebArchive Converter & Watch Manager/logs/
+WebArchive Converter & Watch Manager/*.pdf
+WebArchive Converter & Watch Manager/*.html
+WebArchive Converter & Watch Manager/test*
+WebArchive Converter & Watch Manager/.!*
+
+# ── GroupManager archive (dev history, not for public) ───────────────
+MacOS Contacts Group Manager/archive/
+
+# ── Misc internal / personal ─────────────────────────────────────────
+*.doc
+*.zip
+*.png
