@@ -2,6 +2,8 @@
 
 Standalone macOS AppleScript + ASOC utility that matches a list of email addresses — pasted from a mail client or Calendar invite — against the macOS Contacts database. For each address it can prepend a timestamped note, add a new email address to an existing contact found by name, create missing contacts, and stage everyone in a named group for further processing.
 
+> **Why this tool?** macOS Contacts has no bulk annotation or import workflow. When you want to tag all attendees of a meeting in your address book, you do it one by one — or you write the automation yourself.
+
 No Python. No shell wrapper. No external dependencies.
 
 ---
@@ -150,4 +152,4 @@ Email Contact Importer.applescript
 
 ## License
 
-Copyright © Philippe Dewost 2026. All rights reserved.
+Copyright © Philippe Dewost 2026. Licensed under the [Apache License 2.0](../LICENSE).

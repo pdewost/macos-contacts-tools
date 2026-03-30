@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!--
+        LSAM Session Maintenance Daemon — launchd plist (v4.7 B6-FIX)
+        
+        Install:
+          cp scripts/com.lsam.maintenance.plist ~/Library/LaunchAgents/
+          launchctl load ~/Library/LaunchAgents/com.lsam.maintenance.plist
+        
+        Uninstall:
+          launchctl unload ~/Library/LaunchAgents/com.lsam.maintenance.plist
+          rm ~/Library/LaunchAgents/com.lsam.maintenance.plist
+    -->
+    <key>Label</key>
+    <string>com.lsam.maintenance</string>
+    
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/pdewost/Documents/Personnel/Developpement/macOS Contacts Management/LSAMC - LinkedIn Sync Agent for macOS Contacts/venv/bin/python3</string>
+        <string>/Users/pdewost/Documents/Personnel/Developpement/macOS Contacts Management/LSAMC - LinkedIn Sync Agent for macOS Contacts/scripts/session_maintenance_daemon.py</string>
+        <string>--quiet</string>
+    </array>
+    
+    <key>WorkingDirectory</key>
+    <string>/Users/pdewost/Documents/Personnel/Developpement/macOS Contacts Management/LSAMC - LinkedIn Sync Agent for macOS Contacts</string>
+    
+    <!-- Run every Sunday at 02:00 AM -->
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Weekday</key>
+        <integer>0</integer>
+        <key>Hour</key>
+        <integer>2</integer>
+        <key>Minute</key>
+        <integer>0</integer>
+    </dict>
+    
+    <key>StandardOutPath</key>
+    <string>/Users/pdewost/Documents/Personnel/Developpement/macOS Contacts Management/LSAMC - LinkedIn Sync Agent for macOS Contacts/logs/maintenance_stdout.log</string>
+    
+    <key>StandardErrorPath</key>
+    <string>/Users/pdewost/Documents/Personnel/Developpement/macOS Contacts Management/LSAMC - LinkedIn Sync Agent for macOS Contacts/logs/maintenance_stderr.log</string>
+    
+    <key>RunAtLoad</key>
+    <false/>
+    
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>PATH</key>
+        <string>/usr/local/bin:/usr/bin:/bin</string>
+    </dict>
+</dict>
+</plist>

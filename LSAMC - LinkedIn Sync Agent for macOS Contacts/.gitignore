@@ -1,0 +1,52 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+*.egg-info/
+
+# Data (large / sensitive — never commit)
+data/agent_batch_profile/
+data/agent_chrome_profile/
+data/fast_agent_chrome_profile/
+data/linkedin_access_log.json
+data/birthday_cache.json
+data/priority_newbies*.json
+data/reexamine_queue*.json
+data/audit_playlist.json
+
+# Logs
+logs/*.log
+logs/archive/
+
+# Compiled AppleScript binaries (source .applescript is the truth)
+*.scpt
+a.scpt
+
+# Scratch / temp applescripts (not part of the release)
+LSAM Control Center Clean.applescript
+LSAM Control Center Original.applescript
+LSAM Control Center Reverted.applescript
+LSAM Control Center V231.applescript
+LSAM Control Center V231.scpt
+
+# macOS
+.DS_Store
+.AppleDouble
+
+# IDE
+.vscode/
+.agent/
+
+# Secrets / config with credentials
+config/lsam_config.json
+
+# Simulations output
+simulations/
+
+# Test artefacts
+.pytest_cache/
+tests/__pycache__/
+tests/fixtures/

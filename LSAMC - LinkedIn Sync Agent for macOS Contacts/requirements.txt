@@ -1,0 +1,13 @@
+browser-use
+langchain-google-genai
+google-genai
+pydantic
+pydantic-settings
+playwright
+pytest
+pyyaml
+python-dotenv>=1.0.0
+pyobjc-core
+pyobjc-framework-Cocoa
+pyobjc-framework-Vision
+pyobjc-framework-Quartz

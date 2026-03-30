@@ -4,6 +4,18 @@ A collection of AppleScript + ASOC utilities for managing, enriching, and automa
 
 ---
 
+## Background
+
+macOS Contacts has not had a significant feature update since 2012, when Apple renamed Address Book to Contacts in OS X Mountain Lion. Since then:
+
+- **Group management on macOS is still primitive.** No bulk operations, no move-between-groups workflow, no batch add/remove — everything is drag-and-drop, one contact at a time. iOS 26 actually outpaces macOS here: it renamed Groups to "Lists" and added proper management from iPhone.
+- **Contact photos behave differently** across macOS, iOS, and iCloud — silent resizing, sync failures, and inconsistent display between platforms are a recurring issue.
+- **Mail.app has no contextual intelligence** about contacts — no "last contacted" surfacing, no note-based suggestions, no deduplication assistance.
+
+The scripts in this collection fill specific gaps that Apple has left unaddressed for over a decade.
+
+---
+
 ## Scripts
 
 ### [Email Contact Importer](Email%20Contact%20Importer/)
@@ -52,4 +64,4 @@ Governed by:
 
 ## License
 
-Copyright © Philippe Dewost 2026. All rights reserved.
+Copyright © Philippe Dewost 2026. Licensed under the [Apache License 2.0](LICENSE).
