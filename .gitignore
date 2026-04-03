@@ -11,21 +11,8 @@
 *.env
 **/.env
 
-# ── LSAMC: personal vault + logs + credentials ───────────────────────
-LSAMC - LinkedIn Sync Agent for macOS Contacts/data/
-LSAMC - LinkedIn Sync Agent for macOS Contacts/logs/
-LSAMC - LinkedIn Sync Agent for macOS Contacts/archive/
-LSAMC - LinkedIn Sync Agent for macOS Contacts/VAULT_*.json
-LSAMC - LinkedIn Sync Agent for macOS Contacts/__pycache__/
-LSAMC - LinkedIn Sync Agent for macOS Contacts/*.pyc
-LSAMC - LinkedIn Sync Agent for macOS Contacts/LSAM-Output-Report-*.md
-LSAMC - LinkedIn Sync Agent for macOS Contacts/AUDIT_*.md
-LSAMC - LinkedIn Sync Agent for macOS Contacts/RESCUE_PLAN*.md
-LSAMC - LinkedIn Sync Agent for macOS Contacts/SYNC_*.md
-LSAMC - LinkedIn Sync Agent for macOS Contacts/IDENTITY_AUDIT_*.md
-LSAMC - LinkedIn Sync Agent for macOS Contacts/PLAN_*.md
-LSAMC - LinkedIn Sync Agent for macOS Contacts/TIER3_*.md
-LSAMC - LinkedIn Sync Agent for macOS Contacts/ANTIGRAVITY_REBASE_*.md
+# ── LSAMC: excluded pending personal data audit ───────────────────────
+LSAMC - LinkedIn Sync Agent for macOS Contacts/
 
 # ── Repatriated GitHub clones (nested git repos) ─────────────────────
 MLPro Campaign + Bounced emails Manager/OSX-Contacts-Process-MailChimp-Bouncing-Email-List/

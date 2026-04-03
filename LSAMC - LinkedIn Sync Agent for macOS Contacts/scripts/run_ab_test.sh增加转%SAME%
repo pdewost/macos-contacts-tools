@@ -1,3 +1,0 @@
-#!/bin/bash
-export PYTHONPATH=$PYTHONPATH:.
-python3 src/agent/sync_agent.py --mode SIMULATION --name "Alain Tchernonog" --name "Benjamin Teszner" --name "Breanna Papin" --name "Brigitte Gotti" --name "Claude Sassoulas" --ab-test --headless
