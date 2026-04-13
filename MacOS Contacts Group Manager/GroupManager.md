@@ -1,6 +1,6 @@
 # Group Manager
 
-**Version:** 0.3.3 (2026-02-15)
+**Version:** 0.3.22 (2026-02-15)
 **Platform:** macOS 10.11+ (Contacts.app)
 
 ## Overview
