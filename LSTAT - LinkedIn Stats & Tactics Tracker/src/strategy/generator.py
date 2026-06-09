@@ -4,6 +4,7 @@ Mock-friendly: pass a custom `cascade_call` callable for tests.
 """
 from __future__ import annotations
 
+import os
 import uuid
 from datetime import datetime
 from functools import lru_cache
@@ -14,6 +15,15 @@ from .topic_dict import TOPICS, get_topic as _get_topic_or_none
 
 _PATTERNS_PATH = Path(__file__).with_name("high_performing_patterns.md")
 
+# NR-47(b): the AUTHORITATIVE voice spec lives in 07_Style_Profile (single source of
+# truth). Composed into the prompt at generation — never copied/merged here. Override
+# the path via LSTAT_VOICE_PROMPT_PATH.
+_VOICE_PROMPT_PATH = Path(os.environ.get(
+    "LSTAT_VOICE_PROMPT_PATH",
+    "/Users/pdewost/Documents/Personnel/Developpement/Project PAIA - Personal AI Assistant/"
+    "07_Style_Profile/outputs/system_prompt_short.md",
+))
+
 
 @lru_cache(maxsize=1)
 def _load_patterns() -> str:
@@ -21,6 +31,16 @@ def _load_patterns() -> str:
     Fail-safe: returns '' if the file is missing so drafting never breaks."""
     try:
         return _PATTERNS_PATH.read_text(encoding="utf-8").strip()
+    except Exception:
+        return ""
+
+
+@lru_cache(maxsize=1)
+def _load_voice_prompt() -> str:
+    """NR-47(b): the authoritative VOICE spec from 07_Style_Profile (the floor).
+    Composed ABOVE the performance patterns. Fail-safe: '' if missing."""
+    try:
+        return _VOICE_PROMPT_PATH.read_text(encoding="utf-8").strip()
     except Exception:
         return ""
 
@@ -40,14 +60,22 @@ def _build_prompt(
         "You are drafting a LinkedIn post in the voice of Philippe Dewost — "
         "a French tech executive with experience spanning banking infrastructure, "
         "BFM Business media, and venture capital. "
+    )
+    # NR-47(b): the authoritative VOICE spec (07_Style_Profile) is the FLOOR — composed
+    # first and never violated. Performance patterns (below) apply within it.
+    _voice = _load_voice_prompt()
+    if _voice:
+        system += "\n\nVOICE SPECIFICATION (authoritative — never violate):\n" + _voice + "\n\n"
+    system += (
         "Style guidance for this topic: " + topic["style_fragment"] + " "
         "Length: 800-1200 characters. No hashtags. Use emoji sparingly (at most one). "
         "Return only the draft text — no preamble, no explanation."
     )
-    # NR-46: append data-backed high-performing patterns (hook/coinage/format/mode).
+    # NR-46/47: performance patterns are SUBORDINATE to the voice specification above.
     _patterns = _load_patterns()
     if _patterns:
-        system += "\n\nApply these proven high-performing patterns:\n" + _patterns
+        system += ("\n\nApply these proven high-performing patterns, strictly within "
+                   "the voice specification above:\n" + _patterns)
     user_parts = [f'Draft a LinkedIn post on the topic of "{topic_key}".']
     if source_url:
         user_parts.append(f"Anchor on this event: {source_url}")
