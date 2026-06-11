@@ -39,7 +39,13 @@ WebArchive Converter & Watch Manager/.!*
 # ── GroupManager archive (dev history, not for public) ───────────────
 MacOS Contacts Group Manager/archive/
 
+# ── NEOCORTEX state layers (local-only per NEOCORTEX_SPEC v1.0 §1) ────
+CCC AppleScript Suite for cleaning macOS Contacts (was Contact Management - v6)/NEOCORTEX/
+
 # ── Misc internal / personal ─────────────────────────────────────────
 *.doc
 *.zip
 *.png
+
+# LSTAT carved out to its own local repo 2026-06-11 (was 1 tracked file)
+LSTAT - LinkedIn Stats & Tactics Tracker/
